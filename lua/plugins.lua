@@ -5,12 +5,13 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
     -- fuzzy search
-    -- use 'ctrlpvim/ctrlp.vim'
-    use { "ibhagwan/fzf-lua",
+    use {
+        'ctrlpvim/ctrlp.vim',
         config = function()
-            nmap('<C-p>', ':FzfLua files<CR>')
-            nmap('<C-h>', ':FzfLua<CR>')
-        end }
+            nmap('<F5>', ':CtrlPClearAllCaches<CR>')
+        end
+    }
+
     -- reload nvim conf
     use { "famiu/nvim-reload", requires = { "nvim-lua/plenary.nvim" } }
 
