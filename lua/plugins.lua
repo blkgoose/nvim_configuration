@@ -11,6 +11,8 @@ return require('packer').startup(function(use)
             nmap('<C-p>', ':FzfLua files<CR>')
             nmap('<C-h>', ':FzfLua<CR>')
         end }
+    -- reload nvim conf
+    use { "famiu/nvim-reload", requires = { "nvim-lua/plenary.nvim" } }
 
     -- themes
     use({

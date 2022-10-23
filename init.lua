@@ -30,19 +30,11 @@ nmap('<F1>', ':let @/ = ""<CR>')
 
 opt.clipboard = 'unnamed,unnamedplus'
 
--- reload plugins conf automatically
+-- reload conf automatically
 cmd([[
-augroup plugins_update
+augroup conf_update
   autocmd!
-  autocmd BufWritePost plugins.lua source <afile> | PackerCompile
-augroup end
-]])
-
--- reload init
-cmd([[
-augroup init_update
-  autocmd!
-  autocmd BufWritePost init.lua source <afile>
+  autocmd BufWritePost $HOME/.config/nvim/* lua reload_conf()
 augroup end
 ]])
 
