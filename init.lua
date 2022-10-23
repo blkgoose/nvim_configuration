@@ -16,18 +16,16 @@ opt.expandtab = true
 opt.shiftwidth = 4
 opt.smarttab = true
 opt.softtabstop = 4
-opt.foldmethod='indent'
+opt.foldmethod = 'indent'
 
 opt.relativenumber = true
 
-opt.guicursor='i:block'
-
-opt.viminfo="'100,<10000,s100,h"
+opt.guicursor = 'i:block'
+opt.termguicolors = true
 
 nmap('cf', ':!touch <cfile><cr>')
 nmap('Y', 'yy')
 nmap('*', '"syiw<Esc>: let @/ = @s<CR>:set hlsearch<CR>')
-nmap('m', ':let @/ = @s<CR>:set hlsearch<CR>')
 nmap('<F1>', ':let @/ = ""<CR>')
 
 opt.clipboard = 'unnamed,unnamedplus'

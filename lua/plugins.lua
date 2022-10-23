@@ -24,30 +24,35 @@ return require('packer').startup(function(use)
 
     -- tree file view
     use {
-        "nvim-neo-tree/neo-tree.nvim",
-        branch = "v2.x",
-        requires = { "nvim-lua/plenary.nvim", "kyazdani42/nvim-web-devicons", "MunifTanjim/nui.nvim" },
+        'nvim-neo-tree/neo-tree.nvim',
+        branch = 'v2.x',
+        requires = {
+            'nvim-lua/plenary.nvim',
+            'kyazdani42/nvim-web-devicons',
+            'MunifTanjim/nui.nvim'
+        },
         config = function()
             nmap('<C-f>', ':Neotree toggle<CR>')
         end
     }
 
     -- conqueror of completion
-    use { 'neoclide/coc.nvim',
+    use {
+        'neoclide/coc.nvim',
         branch = 'release',
         config = function()
             nmap('<space>j', ':call CocAction("diagnosticNext")<CR>')
             nmap('<space>k', ':call CocAction("diagnosticPrevious")<CR>')
-            nmap('<leader>c', '<Plug>(coc-codeaction-selected)<cr>')
-            nmap('<leader>l', ':CocList<cr>')
-            nmap('<leader>L', ':CocListResume<cr>')
+            nmap('<leader>c', '<Plug>(coc-codeaction-selected)<CR>')
+            nmap('<leader>l', ':CocList<CR>')
+            nmap('<leader>L', ':CocListResume<CR>')
             nmap('gy', '<Plug>(coc-type-definition)')
             nmap('gi', '<Plug>(coc-implementation)')
             nmap('gr', '<Plug>(coc-references)')
             nmap('gd', '<Plug>(coc-definition)')
             opt.tagfunc = 'CocTagFunc'
-            -- cmd [[ highlight CocInlayHint ctermbg=none ctermfg=243 ]]
-        end }
+        end
+    }
 
     -- todo's highlight
     use {
@@ -64,10 +69,10 @@ return require('packer').startup(function(use)
     use {
         'johnfrankmorgan/whitespace.nvim',
         config = function()
-            require('whitespace-nvim').setup({
+            require('whitespace-nvim').setup {
                 highlight = 'DiffDelete',
                 ignored_filetypes = { 'TelescopePrompt' },
-            })
+            }
 
             -- removes trailing whitespace
             keymap('<F2>', function()
@@ -80,7 +85,8 @@ return require('packer').startup(function(use)
     use 'tpope/vim-commentary'
 
     -- blame
-    use { 'tpope/vim-fugitive',
+    use {
+        'tpope/vim-fugitive',
         config = function()
             nmap('<leader>b', ':Gblame')
         end
@@ -90,7 +96,8 @@ return require('packer').startup(function(use)
     use 'dag/vim-fish'
     use 'jparise/vim-graphql'
     use 'elixir-editors/vim-elixir'
-    use { 'mhinz/vim-mix-format',
+    use {
+        'mhinz/vim-mix-format',
         config = function()
             g.mix_format_on_save = 1
         end
