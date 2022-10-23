@@ -8,6 +8,7 @@ local default = "none"
 local green = "#007010"
 local grey = "#707070"
 local light_grey = "#999999"
+local light_pink = "#e6bac1"
 local light_purple = "#bdceed"
 local off_white = "#cccccc"
 local orange = "#ea6634"
@@ -17,7 +18,7 @@ local red = "#e83f80"
 local sun = "#ffb65e"
 local teal = "#00aaaa"
 local undefined = "#ff0000"
--- local vibrant_green = "#b2c481"
+local vibrant_green = "#b2c481"
 local white = "#eeeeee"
 local yellow = "#f7d98d"
 
@@ -49,13 +50,13 @@ local palette = {
         tag = undefined,
         statement = cyan,
         ["function"] = blue,
-        variable = undefined,
+        variable = vibrant_green,
         include = blue,
         keyword = yellow,
-        struct = undefined,
+        struct = blue,
         string = pink,
         identifier = purple,
-        field = undefined,
+        field = blue,
         parameter = undefined,
         property = undefined,
         punctuation = white,
@@ -70,10 +71,10 @@ local palette = {
         conditional = yellow,
     },
     built_in = {
-        ["function"] = undefined,
+        ["function"] = blue,
         type = undefined,
-        variable = undefined,
-        keyword = undefined,
+        variable = vibrant_green,
+        keyword = yellow,
         constant = undefined,
     },
     diagnostic = {
@@ -83,20 +84,20 @@ local palette = {
         hint = light_grey,
     },
     inc_search = { fg = black, bg = dark_orange },
-    uri = undefined,
+    uri = pink,
     pum = {
         fg = white,
         bg = grey,
-        sbar = undefined,
-        thumb = undefined,
+        sbar = light_grey,
+        thumb = white,
         sel = {
             bg = white,
             fg = black,
         },
     },
     heading = {
-        h1 = undefined,
-        h2 = undefined,
+        h1 = light_pink,
+        h2 = light_pink,
     },
 }
 
