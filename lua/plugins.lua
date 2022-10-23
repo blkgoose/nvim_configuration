@@ -12,6 +12,15 @@ return require('packer').startup(function(use)
         end
     }
 
+    -- color hex values
+    use {
+        'chrisbra/Colorizer',
+        config = function()
+            g.colorizer_colornames = 0
+            nmap('<F8>', ':ColorToggle<CR>')
+        end
+    }
+
     -- reload nvim conf
     use { "famiu/nvim-reload", requires = { "nvim-lua/plenary.nvim" } }
 
