@@ -106,7 +106,7 @@ return require('packer').startup(function(use)
     use {
         'tpope/vim-fugitive',
         config = function()
-            nmap('<leader>b', ':Gblame')
+            nmap('<leader>b', ':Git blame<CR>')
         end
     }
 
