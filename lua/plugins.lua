@@ -15,14 +15,20 @@ return require('packer').startup(function(use)
     use { "famiu/nvim-reload", requires = { "nvim-lua/plenary.nvim" } }
 
     -- themes
-    use({
-        "themercorp/themer.lua",
+    use {
+        'blkgoose/themer.lua',
         config = function()
-            require("themer").setup({
-                colorscheme = "github_dark_colorblind",
-            })
+            local palette = require('palette')
+
+            require('themer').setup {
+                colorscheme = palette,
+                dim_inactive = false,
+                diagnostic_underline = "underline"
+            }
+
+            cmd [[ hi IncSearch gui=none ]]
         end
-    })
+    }
 
     -- tree file view
     use {
