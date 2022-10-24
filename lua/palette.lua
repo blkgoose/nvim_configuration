@@ -66,7 +66,7 @@ local palette = {
         constant = dark_purple,
         todo = { fg = black, bg = orange },
         number = light_purple,
-        comment = blue,
+        comment = light_purple,
         type = teal,
         conditional = yellow,
     },
