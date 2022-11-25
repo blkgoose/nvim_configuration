@@ -110,6 +110,9 @@ return require('packer').startup(function(use)
         end
     }
 
+    -- git status side-bar
+    use { 'airblade/vim-gitgutter' }
+
     -- syntax highlight and formatters
     use 'dag/vim-fish'
     use 'jparise/vim-graphql'
