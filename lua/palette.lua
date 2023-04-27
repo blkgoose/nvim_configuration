@@ -1,104 +1,154 @@
-local black = "#000000"
-local blue = "#6dcefd"
-local cyan = "#57c1d9"
-local dark_grey = "#555555"
-local dark_orange = "#ffaa00"
-local dark_purple = "#9985d1"
-local default = "none"
-local green = "#007010"
-local grey = "#707070"
-local light_grey = "#999999"
-local light_pink = "#e6bac1"
-local light_purple = "#bdceed"
-local off_white = "#cccccc"
-local orange = "#ea6634"
-local pink = "#e68ac1"
-local purple = "#b4a4de"
-local red = "#e83f80"
-local sun = "#ffb65e"
-local teal = "#00aaaa"
-local undefined = "#ff0000"
-local vibrant_green = "#b2c481"
-local white = "#eeeeee"
-local yellow = "#f7d98d"
+return {
+  colors = {
+    strong_blue = "#52b3ff",
+    strong_green = "#aaff29",
+    strong_red = "#ff3765",
+    strong_yellow = "#ffbc60",
+    dark_red = "#e03d63",
+    red = "#f45c7f",
+    light_red = "#ff84a0",
+    dark_green = "#93bf50",
+    green = "#addb67",
+    light_green = "#c5ef86",
+    dark_yellow = "#d7ab6f",
+    yellow = "#ecc48d",
+    light_yellow = "#f9dcb3",
+    dark_blue = "#48a6f0",
+    blue = "#6cbeff",
+    light_blue = "#9fd5ff",
+    dark_magenta = "#ae75d4",
+    magenta = "#c792ea",
+    light_magenta = "#deb7f8",
+    dark_cyan = "#77bcf4",
+    cyan = "#9fd4ff",
+    light_cyan = "#d2ebff",
+    dark_black = "#191d27",
+    black = "#1f2430",
+    light_black = "#252b39",
+    grey1 = "#333843",
+    grey2 = "#474b56",
+    grey3 = "#5b5f69",
+    grey4 = "#6f737c",
+    grey5 = "#83868f",
+    grey6 = "#979aa2",
+    grey7 = "#abaeb5",
+    grey8 = "#bfc1c8",
+    grey9 = "#d3d5db",
+    white = "#e9ebf0",
+  },
+
+  syntax = {
+    statement = "#f78c6c",
+    ["function"] = "#6cbeff",
+    variable = "#e9ebf0",
+    include = "#c792ea",
+    keyword = "#c792ea",
+    struct = "#f45c7f",
+    string = "#addb67",
+    identifier = "#9fd4ff",
+    field = "#9fd4ff",
+    parameter = "#f45c7f",
+    property = "#f78c6c",
+    punctuation = "#e9ebf0",
+    constructor = "#9fd4ff",
+    operator = "#bfc1c8",
+    preproc = "#9fd4ff",
+    constant = "#f78c6c",
+    tag = "#f45c7f",
+    todo = { fg = "#9fd4ff", bg = "undefined" },
+    number = "#f78c6c",
+    comment = "#6f737c",
+    type = "#ecc48d",
+    conditional = "#f45c7f",
+  },
+}
 
 -- TODO: remove all the undefined markers
 
-local palette = {
-    directory = blue,
-    fg = off_white,
-    diff = {
-        add = green,
-        remove = red,
-        text = dark_orange,
-        change = orange,
-    },
-    accent = cyan,
-    search_result = { fg = black, bg = yellow, telescope = blue },
-    match = undefined,
-    dimmed = {
-        inactive = light_grey,
-        subtle = light_grey,
-    },
-    bg = {
-        base = default,
-        alt = dark_grey,
-        selected = dark_grey,
-    },
-    border = light_grey,
-    syntax = {
-        tag = undefined,
-        statement = cyan,
-        ["function"] = blue,
-        variable = vibrant_green,
-        include = blue,
-        keyword = yellow,
-        struct = blue,
-        string = pink,
-        identifier = purple,
-        field = blue,
-        parameter = undefined,
-        property = undefined,
-        punctuation = white,
-        constructor = undefined,
-        operator = sun,
-        preproc = purple,
-        constant = dark_purple,
-        todo = { fg = black, bg = orange },
-        number = light_purple,
-        comment = light_purple,
-        type = teal,
-        conditional = yellow,
-    },
-    built_in = {
-        ["function"] = blue,
-        type = undefined,
-        variable = vibrant_green,
-        keyword = yellow,
-        constant = undefined,
-    },
-    diagnostic = {
-        error = red,
-        warn = orange,
-        info = light_grey,
-        hint = light_grey,
-    },
-    inc_search = { fg = black, bg = dark_orange },
-    uri = pink,
-    pum = {
-        fg = white,
-        bg = grey,
-        sbar = light_grey,
-        thumb = white,
-        sel = {
-            bg = white,
-            fg = black,
-        },
-    },
-    heading = {
-        h1 = light_pink,
-        h2 = light_pink,
-    },
-}
-
-return palette
+-- local palette = {
+--   directory = colors.blue,
+--   fg = colors.off_white,
+--   diff = {
+--     add = colors.green,
+--     remove = colors.red,
+--     text = colors.dark_orange,
+--     change = colors.orange,
+--   },
+--   accent = colors.cyan,
+--   search_result = { fg = colors.black, bg = colors.yellow, telescope = colors.blue },
+--   match = colors.undefined,
+--   dimmed = {
+--     inactive = colors.light_grey,
+--     subtle = colors.light_grey,
+--   },
+--   bg = {
+--     base = colors.default,
+--     alt = colors.default,
+--     selected = colors.dark_grey,
+--   },
+--   border = colors.light_grey,
+--   syntax = {
+--     tag = colors.undefined,
+--     statement = colors.cyan,
+--     ["function"] = colors.blue,
+--     variable = colors.off_white,
+--     include = colors.blue,
+--     keyword = colors.yellow,
+--     struct = colors.blue,
+--     string = colors.pink,
+--     identifier = colors.purple,
+--     field = colors.blue,
+--     parameter = colors.red,
+--     property = colors.purple,
+--     punctuation = colors.white,
+--     constructor = colors.vibrant_green,
+--     operator = colors.sun,
+--     preproc = colors.purple,
+--     constant = colors.dark_purple,
+--     todo = { fg = colors.black, bg = colors.orange },
+--     number = colors.light_purple,
+--     comment = colors.light_purple,
+--     type = colors.teal,
+--     conditional = colors.yellow,
+--   },
+--   built_in = {
+--     ["function"] = colors.blue,
+--     type = colors.teal,
+--     variable = colors.vibrant_green,
+--     keyword = colors.yellow,
+--     constant = colors.purple,
+--   },
+--   diagnostic = {
+--     error = colors.red,
+--     warn = colors.orange,
+--     info = colors.light_grey,
+--     hint = colors.light_grey,
+--   },
+--   inc_search = { fg = colors.black, bg = colors.dark_orange },
+--   uri = colors.pink,
+--   pum = {
+--     fg = colors.white,
+--     bg = colors.grey,
+--     sbar = colors.light_grey,
+--     thumb = colors.white,
+--     sel = {
+--       bg = colors.white,
+--       fg = colors.black,
+--     },
+--   },
+--   heading = {
+--     h1 = colors.light_pink,
+--     h2 = colors.light_pink,
+--   },
+--   remaps = {
+--     base = {
+--       WinSeparator = { fg = colors.light_grey, bg = colors.default },
+--       DiffAdd = { fg = colors.green, bg = colors.black },
+--       DiffChange = { fg = colors.yellow, bg = colors.black },
+--       DiffDelete = { fg = colors.red, bg = colors.black },
+--       MicroscopeMatch = { fg = colors.red, bg = colors.blue },
+--       MicroscopeColor1 = { fg = colors.purple },
+--       MicroscopeColor2 = { fg = colors.orange },
+--     },
+--   },
+-- }
