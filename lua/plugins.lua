@@ -225,8 +225,8 @@ require("lazy").setup({
       { "gd", ":lua vim.lsp.buf.definition()<cr>" },
       { "gr", ":lua vim.lsp.buf.references()<cr>" },
       { "gi", ":lua vim.lsp.buf.implementations()<cr>" },
-      { "<space>j", ":lua vim.diagnostic.goto_prev({ wrap = false })<cr>" },
-      { "<space>k", ":lua vim.diagnostic.goto_next({ wrap = false })<cr>" },
+      { "<space>k", ":lua vim.diagnostic.goto_prev({ wrap = false })<cr>" },
+      { "<space>j", ":lua vim.diagnostic.goto_next({ wrap = false })<cr>" },
     },
     event = "VeryLazy",
     config = function()
