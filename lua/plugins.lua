@@ -22,6 +22,7 @@ require("lazy").setup({
     dependencies = {
       "danielefongo/microscope-files",
       "danielefongo/microscope-buffers",
+      "danielefongo/microscope-code",
     },
     config = function()
       require("config.microscope")

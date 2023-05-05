@@ -3,6 +3,7 @@ local microscope = require("microscope")
 local actions = require("microscope.actions")
 local files = require("microscope-files")
 local buffers = require("microscope-buffers")
+local code = require("microscope-code")
 
 microscope.setup({
   size = {
@@ -23,6 +24,7 @@ microscope.setup({
 
 microscope.register(files.finders)
 microscope.register(buffers.finders)
+microscope.register(code.finders)
 
 keymap("<leader>fw", microscope.finders.workspace_grep:bind())
 keymap("<leader>fW", microscope.finders.workspace_fuzzy:bind())
