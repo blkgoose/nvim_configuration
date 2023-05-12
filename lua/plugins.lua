@@ -15,6 +15,10 @@ local palette = require("palette")
 local colors = palette.colors
 
 require("lazy").setup({
+  dev = {
+    path = "~/proj/pers/lua/",
+  },
+
   {
     "danielefongo/microscope",
     dependencies = {
