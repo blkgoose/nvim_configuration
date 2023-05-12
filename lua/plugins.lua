@@ -95,6 +95,9 @@ require("lazy").setup({
       "nvim-tree/nvim-web-devicons",
       "MunifTanjim/nui.nvim",
     },
+    keys = {
+      { "<C-f>", ":Neotree toggle<CR>" },
+    },
     config = function()
       require("neo-tree").setup({
         close_if_last_window = true,
@@ -108,8 +111,6 @@ require("lazy").setup({
           follow_current_file = true,
         },
       })
-
-      nmap("<C-f>", ":Neotree toggle<CR>")
     end,
   },
 
