@@ -70,6 +70,25 @@ require("lazy").setup({
     end,
   },
 
+  {
+    "b0o/incline.nvim",
+    event = "VeryLazy",
+    opts = {
+      highlight = {
+        groups = {
+          InclineNormal = {
+            default = true,
+            group = "ThemerSearchResult",
+          },
+          InclineNormalNC = {
+            default = true,
+            group = "ThemerSelected",
+          },
+        },
+      },
+    },
+  },
+
   -- tree file view
   {
     "nvim-neo-tree/neo-tree.nvim",
