@@ -15,7 +15,6 @@ local palette = require("palette")
 local colors = palette.colors
 
 require("lazy").setup({
-  -- fuzzy search
   {
     "danielefongo/microscope",
     dependencies = {
@@ -28,7 +27,6 @@ require("lazy").setup({
     end,
   },
 
-  -- themes
   {
     "ThemerCorp/themer.lua",
     opts = {
@@ -89,7 +87,6 @@ require("lazy").setup({
     },
   },
 
-  -- tree file view
   {
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v2.x",
@@ -130,10 +127,8 @@ require("lazy").setup({
     end,
   },
 
-  -- auto comments commands
   { "tpope/vim-commentary" },
 
-  -- git commands
   {
     "tpope/vim-fugitive",
     keys = {
@@ -151,7 +146,6 @@ require("lazy").setup({
     },
   },
 
-  -- syntax highlight and formatters
   { "mechatroner/rainbow_csv" },
   { "dag/vim-fish" },
 
@@ -379,7 +373,6 @@ require("lazy").setup({
     },
   },
 
-  -- distraction free
   {
     "arnamak/stay-centered.nvim",
     config = function()
