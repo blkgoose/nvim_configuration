@@ -166,16 +166,11 @@ require("lazy").setup({
       "hrsh7th/cmp-nvim-lsp",
     },
     keys = {
-      { "<leader>c", ":lua vim.lsp.buf.code_action()<cr>" },
       { "<leader>h", ":lua vim.lsp.buf.signature_help()<cr>" },
       { "<leader>R", ":lua vim.lsp.buf.rename()<cr>" },
-      { "gd", ":lua vim.lsp.buf.definition()<cr>" },
-      { "gr", ":lua vim.lsp.buf.references()<cr>" },
-      { "gi", ":lua vim.lsp.buf.implementations()<cr>" },
       { "<space>k", ":lua vim.diagnostic.goto_prev({ wrap = false })<cr>" },
       { "<space>j", ":lua vim.diagnostic.goto_next({ wrap = false })<cr>" },
     },
-    event = "VeryLazy",
     config = function()
       local lsp = require("lspconfig")
       local cmp = require("cmp_nvim_lsp")
