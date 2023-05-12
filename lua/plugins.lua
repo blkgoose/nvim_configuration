@@ -114,20 +114,6 @@ require("lazy").setup({
     end,
   },
 
-  {
-    "johnfrankmorgan/whitespace.nvim",
-    config = function()
-      require("whitespace-nvim").setup({
-        highlight = "DiffDelete",
-        ignored_filetypes = { "TelescopePrompt" },
-      })
-
-      keymap("<F2>", function()
-        require("whitespace-nvim").trim()
-      end)
-    end,
-  },
-
   { "tpope/vim-commentary" },
 
   {
