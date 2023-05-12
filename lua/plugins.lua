@@ -49,6 +49,7 @@ require("lazy").setup({
           "dockerfile",
           "elixir",
           "elm",
+          "fish",
           "html",
           "javascript",
           "json",
