@@ -13,6 +13,7 @@ opt.completeopt = "menu"
 opt.autoindent = true
 opt.expandtab = true
 opt.foldmethod = "indent"
+opt.relativenumber = true
 
 opt.laststatus = 0
 opt.guicursor = "i:block"
