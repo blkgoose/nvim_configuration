@@ -14,7 +14,7 @@
   "microscope": { "branch": "main", "commit": "114d65a34c3e7fc865a2cd989eab9e1e36a1c251" },
   "microscope-buffers": { "branch": "main", "commit": "6e2f50d4eceb05ad1b2d27b104478749621e509e" },
   "microscope-code": { "branch": "main", "commit": "256033321d4d97d3f233cd1b4010e876bfb9d837" },
-  "microscope-files": { "branch": "main", "commit": "75bc86b7bce36ae3c7f597e60b3c00fd14e7987f" },
+  "microscope-files": { "branch": "main", "commit": "19cd04838754940782177083843facf6950e004c" },
   "neo-tree.nvim": { "branch": "v2.x", "commit": "541f5c92d2492041afb354e2df6e74809094b051" },
   "nui.nvim": { "branch": "main", "commit": "698e75814cd7c56b0dd8af4936bcef2d13807f3c" },
   "null-ls.nvim": { "branch": "main", "commit": "08bb00c7c2cd58c72e02cf54e4b9cbfe14b03e09" },
