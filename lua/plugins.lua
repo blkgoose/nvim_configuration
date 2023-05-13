@@ -15,17 +15,14 @@ local palette = require("palette")
 local colors = palette.colors
 
 require("lazy").setup({
-  dev = {
-    path = "~/proj/pers/lua/",
-  },
-
   {
     "danielefongo/microscope",
     dependencies = {
-      "danielefongo/microscope-files",
+      { "danielefongo/microscope-files", dev = false },
       "danielefongo/microscope-buffers",
       "danielefongo/microscope-code",
     },
+    dev = false,
     config = function()
       require("config.microscope")
     end,
@@ -371,4 +368,6 @@ require("lazy").setup({
       require("stay-centered")
     end,
   },
+}, {
+  dev = { path = "~/proj/pers/lua/" },
 })
