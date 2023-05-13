@@ -151,6 +151,7 @@ require("lazy").setup({
       "hrsh7th/cmp-nvim-lsp",
     },
     keys = {
+      { "<leader>c", ":lua vim.lsp.buf.code_action()<cr>" },
       { "<leader>h", ":lua vim.lsp.buf.signature_help()<cr>" },
       { "<leader>R", ":lua vim.lsp.buf.rename()<cr>" },
       { "<space>k", ":lua vim.diagnostic.goto_prev({ wrap = false })<cr>" },
