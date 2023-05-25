@@ -12,27 +12,15 @@ local mode = 0
 local layout_list = {
   function(opts)
     return display
-      .vertical({
-        display.input(1),
-        display.preview(),
-        display.space("50%"),
-      })
-      :build(opts.ui_rectangle)
-  end,
-  function(opts)
-    return display
-      .vertical({
-        display.space("25%"),
-        display.horizontal({
+      .horizontal({
+        display.vertical({
+          display.input(1),
           display.results(),
-          display.space("25%"),
-          display.preview(),
         }),
-        display.space("25%"),
+        display.preview(),
       })
       :build(opts.ui_rectangle)
   end,
-  layouts.default,
 }
 local function rotate_layout(instance)
   instance:set_layout(layout_list[mode + 1])
@@ -41,7 +29,7 @@ end
 
 microscope.setup({
   size = {
-    width = 70,
+    width = 125,
     height = 40,
   },
   bindings = {
