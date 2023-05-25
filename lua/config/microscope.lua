@@ -5,9 +5,43 @@ local files = require("microscope-files")
 local buffers = require("microscope-buffers")
 local code = require("microscope-code")
 
+local layouts = require("microscope.builtin.layouts")
+local display = require("microscope.api.display")
+
+local mode = 0
+local layout_list = {
+  function(opts)
+    return display
+      .vertical({
+        display.input(1),
+        display.preview(),
+        display.space("50%"),
+      })
+      :build(opts.ui_rectangle)
+  end,
+  function(opts)
+    return display
+      .vertical({
+        display.space("25%"),
+        display.horizontal({
+          display.results(),
+          display.space("25%"),
+          display.preview(),
+        }),
+        display.space("25%"),
+      })
+      :build(opts.ui_rectangle)
+  end,
+  layouts.default,
+}
+local function rotate_layout(instance)
+  instance:set_layout(layout_list[mode + 1])
+  mode = (mode + 1) % #layout_list
+end
+
 microscope.setup({
   size = {
-    width = 125,
+    width = 70,
     height = 40,
   },
   bindings = {
@@ -16,6 +50,7 @@ microscope.setup({
     ["<c-n>"] = actions.scroll_down,
     ["<c-p>"] = actions.scroll_up,
     ["<c-m>"] = actions.toggle_full_screen,
+    ["<c-a>"] = rotate_layout,
     ["<CR>"] = actions.open,
     ["<ESC>"] = actions.close,
     ["<TAB>"] = actions.select,
