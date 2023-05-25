@@ -17,8 +17,9 @@ opt.smarttab = true
 opt.softtabstop = 4
 opt.foldmethod = "indent"
 opt.relativenumber = true
+opt.cursorline = true
 
-opt.laststatus = 0
+opt.laststatus = 2
 opt.guicursor = "i:block"
 opt.termguicolors = true
 opt.pumheight = 12
@@ -49,10 +50,6 @@ opt.clipboard = "unnamed,unnamedplus"
 -- highlight what has been copied
 cmd([[
 autocmd TextYankPost * silent! lua vim.highlight.on_yank { higroup='IncSearch', timeout=500 }
-]])
-
-cmd([[
-autocmd BufWinEnter * normal zR
 ]])
 
 cmd([[
