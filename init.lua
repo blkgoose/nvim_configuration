@@ -15,7 +15,6 @@ opt.expandtab = true
 opt.shiftwidth = 4
 opt.smarttab = true
 opt.softtabstop = 4
-opt.foldmethod = "indent"
 opt.relativenumber = true
 opt.cursorline = true
 
