@@ -26,13 +26,13 @@ opt.pumheight = 12
 opt.mouse = ""
 
 cmd([[
-    let s:pair_mode = 0
+    let s:pair_mode = 1
     function! PairMode()
         if s:pair_mode  == 1
-            let s:pair_mode = 1
+            let s:pair_mode = 0
             set norelativenumber
         else
-            let s:pair_mode = 0
+            let s:pair_mode = 1
             set relativenumber
         endif
     endfunction
