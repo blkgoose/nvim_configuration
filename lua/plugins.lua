@@ -12,6 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local palette = require("palette")
+local syntax = palette.syntax
 local colors = palette.colors
 
 require("lazy").setup({
@@ -31,7 +32,7 @@ require("lazy").setup({
   {
     "ThemerCorp/themer.lua",
     opts = {
-      colorscheme = "rose_pine",
+      colorscheme = palette.colorscheme,
       diagnostic_underline = "underline",
     },
   },
@@ -275,7 +276,7 @@ require("lazy").setup({
   {
     "lvimuser/lsp-inlayhints.nvim",
     event = "BufReadPost",
-    opts = { inlay_hints = { highlight = colors.light_grey } },
+    opts = { inlay_hints = { highlight = colors.grey3 } },
   },
 
   {
