@@ -40,6 +40,7 @@ microscope.setup({
     ["<c-p>"] = actions.scroll_up,
     ["<c-m>"] = actions.toggle_full_screen,
     ["<c-a>"] = rotate_layout,
+    ["<a-cr>"] = actions.refine,
     ["<CR>"] = actions.open,
     ["<ESC>"] = actions.close,
     ["<TAB>"] = actions.select,
