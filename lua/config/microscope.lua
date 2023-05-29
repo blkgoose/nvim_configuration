@@ -5,12 +5,13 @@ local files = require("microscope-files")
 local buffers = require("microscope-buffers")
 local code = require("microscope-code")
 
-local layouts = require("microscope.builtin.layouts")
 local display = require("microscope.api.display")
 
 local mode = 0
 local layout_list = {
   function(opts)
+    local size = (opts.full_screen and opts.ui_size) or opts.finder_size
+
     return display
       .horizontal({
         display.vertical({
@@ -19,7 +20,7 @@ local layout_list = {
         }),
         display.preview(),
       })
-      :build(opts.ui_rectangle)
+      :build(size)
   end,
 }
 local function rotate_layout(instance)
@@ -61,5 +62,6 @@ keymap("gt", ":Microscope code_type_definition<CR>")
 for finder, _ in pairs(files.finders) do
   microscope.finders[finder]:override({
     bindings = { ["<c-q>"] = files.actions.quickfix },
+    layout = layout_list[1],
   })
 end
