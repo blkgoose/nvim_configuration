@@ -95,9 +95,9 @@ local colorscheme = {
   syntax = syntax,
   built_in = syntax,
   diagnostic = {
-    error = colors.strong_red,
+    error = colors.light_red,
     warn = colors.strong_yellow,
-    info = colors.strong_green,
+    info = colors.cyan,
     hint = colors.magenta,
   },
   inc_search = { fg = colors.dark_black, bg = colors.blue },
