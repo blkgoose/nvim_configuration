@@ -6,26 +6,56 @@ local buffers = require("microscope-buffers")
 local code = require("microscope-code")
 
 local display = require("microscope.api.display")
+local builtin = require("microscope.builtin.layouts")
 
-local mode = 0
 local layout_list = {
   function(opts)
-    local size = (opts.full_screen and opts.ui_size) or opts.finder_size
-
+    if opts.full_screen then
+      return display
+        .horizontal({
+          display.preview(),
+          display.vertical({
+            display.input(1),
+            display.results(5),
+            display.space(),
+          }),
+        })
+        :build(opts.ui_size)
+    else
+      return display
+        .horizontal({
+          display.vertical({
+            display.input(1),
+            display.results(5),
+            display.space(),
+          }),
+          display.preview(),
+        })
+        :build(opts.ui_size)
+    end
+  end,
+  builtin.default,
+  function(opts)
     return display
       .horizontal({
+        display.space("20%"),
         display.vertical({
           display.input(1),
-          display.results(),
+          display.results(5),
+          display.space(),
         }),
-        display.preview(),
+        display.space("20%"),
       })
-      :build(size)
+      :build(opts.ui_size)
   end,
 }
 local function rotate_layout(instance)
-  instance:set_layout(layout_list[mode + 1])
-  mode = (mode + 1) % #layout_list
+  instance:alter(function(opts)
+    opts.mode = opts.mode or 1
+    opts.layout = layout_list[opts.mode + 1]
+    opts.mode = (opts.mode + 1) % #layout_list
+    return opts
+  end)
 end
 
 microscope.setup({
