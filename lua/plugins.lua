@@ -12,7 +12,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local palette = require("palette")
-local syntax = palette.syntax
 local colors = palette.colors
 
 require("lazy").setup({
