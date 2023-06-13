@@ -28,13 +28,16 @@ opt.mouse = ""
 cmd([[
     let s:pair_mode = 1
     function! PairMode()
+        let currwin=winnr()
+
         if s:pair_mode  == 1
             let s:pair_mode = 0
-            set norelativenumber
+            windo set norelativenumber
         else
             let s:pair_mode = 1
-            set relativenumber
+            windo set relativenumber
         endif
+        execute currwin . 'wincmd w'
     endfunction
 
     nnoremap <leader>P :call PairMode()<CR>
