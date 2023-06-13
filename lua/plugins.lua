@@ -45,10 +45,12 @@ require("lazy").setup({
         ensure_installed = {
           "bash",
           "css",
+          "diff",
           "dockerfile",
           "elixir",
           "elm",
           "fish",
+          "gitcommit",
           "html",
           "javascript",
           "json",
