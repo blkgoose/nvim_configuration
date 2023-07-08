@@ -125,14 +125,14 @@ require("lazy").setup({
     dependencies = {
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
-      "ray-x/lsp_signature.nvim",
-      "lvimuser/lsp-inlayhints.nvim",
+      -- "ray-x/lsp_signature.nvim",
+      -- "lvimuser/lsp-inlayhints.nvim",
       "hrsh7th/nvim-cmp",
       "hrsh7th/cmp-nvim-lsp",
     },
     keys = {
       { "<leader>c", ":lua vim.lsp.buf.code_action()<cr>" },
-      { "<leader>h", ":lua vim.lsp.buf.signature_help()<cr>" },
+      -- { "<leader>h", ":lua vim.lsp.buf.signature_help()<cr>" },
       { "<leader>R", ":lua vim.lsp.buf.rename()<cr>" },
       { "<space>k", ":lua vim.diagnostic.goto_prev({ wrap = false })<cr>" },
       { "<space>j", ":lua vim.diagnostic.goto_next({ wrap = false })<cr>" },
@@ -140,8 +140,8 @@ require("lazy").setup({
     config = function()
       local lsp = require("lspconfig")
       local cmp = require("cmp_nvim_lsp")
-      local signature = require("lsp_signature")
-      local inlay = require("lsp-inlayhints")
+      -- local signature = require("lsp_signature")
+      -- local inlay = require("lsp-inlayhints")
 
       local mason = require("mason")
       local mason_lsp_config = require("mason-lspconfig")
@@ -154,8 +154,12 @@ require("lazy").setup({
       end
 
       local function on_attach(client, bufnr)
-        signature.on_attach({ bind = true }, bufnr)
-        inlay.on_attach(client, bufnr)
+        -- signature.on_attach({ bind = true }, bufnr)
+        -- inlay.on_attach(client, bufnr)
+
+        --         if client.name == "rust-analyzer" then
+        client.server_capabilities.semanticTokensProvider = nil
+        --         end
       end
 
       local lsps = {
@@ -274,11 +278,12 @@ require("lazy").setup({
     dependencies = { "neovim/nvim-lspconfig" },
   },
 
-  {
-    "lvimuser/lsp-inlayhints.nvim",
-    event = "BufReadPost",
-    opts = { inlay_hints = { highlight = colors.grey3 } },
-  },
+  -- {
+  --   "lvimuser/lsp-inlayhints.nvim",
+  --   branch = "anticonceal",
+  --   event = "BufReadPost",
+  --   opts = { inlay_hints = { highlight = colors.grey3 } },
+  -- },
 
   {
     "hrsh7th/nvim-cmp",
